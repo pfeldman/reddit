@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components'
 import { lighten } from 'polished'
 
 export const GlobalStyles = createGlobalStyle`

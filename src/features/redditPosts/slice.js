@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { BASE_URL } from '../../resources/constants';
+import { createSlice } from '@reduxjs/toolkit'
+import { BASE_URL } from '../../resources/constants'
 
 export const redditPosts = createSlice({
   name: 'redditPosts',
@@ -15,10 +15,10 @@ export const redditPosts = createSlice({
       state.isFetching = false
       state.data = data
     }
-  },
-});
+  }
+})
 
-export const { request, success } = redditPosts.actions;
+export const { request, success } = redditPosts.actions
 
 export const fetchRedditPosts = (count = 50) => async dispatch => {
   dispatch(request())
@@ -27,7 +27,7 @@ export const fetchRedditPosts = (count = 50) => async dispatch => {
   dispatch(success(data.data.children))
 }
 
-export const getIsFetching = state => state.redditPosts.isFetching;
+export const getIsFetching = state => state.redditPosts.isFetching
 export const getRedditPosts = state => state.redditPosts.data
 
-export default redditPosts.reducer;
+export default redditPosts.reducer
