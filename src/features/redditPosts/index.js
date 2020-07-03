@@ -5,6 +5,8 @@ import {
   fetchRedditPosts,
   getRedditPosts
 } from './slice';
+import { Loader } from '../../components/Loader';
+import { Wrapper } from './styled';
 
 export function RedditPosts() {
   const fetchingRedditPosts = useSelector(getIsFetching);
@@ -15,13 +17,11 @@ export function RedditPosts() {
     dispatch(fetchRedditPosts())
   }, [dispatch])
 
-  console.log(redditPosts)
-
-  if (fetchingRedditPosts) {
-    return <span>Loading</span>
-  }
-
   return (
-    <div>Hello</div>
-  );
+    <Wrapper loading={fetchingRedditPosts}>
+      {fetchingRedditPosts ? <Loader /> : (
+        <div>Hello</div>
+      )}
+    </Wrapper>
+  )
 }

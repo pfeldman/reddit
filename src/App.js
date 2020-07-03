@@ -1,11 +1,22 @@
 import React from 'react';
 import { RedditPosts } from './features/redditPosts';
+import { GlobalStyles, Wrapper } from './styled';
+import { ThemeProvider } from 'styled-components'
+import { useSelector } from 'react-redux';
+import { getTheme } from './features/theme/slice';
+import { Theme } from './features/theme';
 
-function App() {
+const App = () => {
+  const theme = useSelector(getTheme)
+
   return (
-    <div className="App">
-      <RedditPosts />
-    </div>
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        <Theme />
+        <GlobalStyles />
+        <RedditPosts />
+      </Wrapper>
+    </ThemeProvider>
   );
 }
 

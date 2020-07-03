@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { BASE_URL } from '../../resources/constants';
 
 export const redditPosts = createSlice({
-  name: 'counter',
+  name: 'redditPosts',
   initialState: {
     isFetching: false,
     data: []
