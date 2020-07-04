@@ -14,11 +14,11 @@ import {
 import moment from 'moment'
 import { useDispatch, useSelector } from 'react-redux'
 import { getActivePost, setActivePost } from '../activePost/slice'
-import { ReactComponent as CloseIcon} from '../../resources/icons/close.svg'
+import { ReactComponent as CloseIcon } from '../../resources/icons/close.svg'
 import { dismissPost } from '../dismissedPosts/slice'
 import { getReadPosts, readPost } from '../readStatus/slice'
 
-export const Post = ({ post, isDismissing }) => {
+export const Post = ({ post, isDismissing, onPostOpen }) => {
   const [dismissed, setDismissed] = useState(false)
   const { data } = post
   const dispatch = useDispatch()
@@ -32,6 +32,7 @@ export const Post = ({ post, isDismissing }) => {
   const handlePostSelect = () => {
     dispatch(setActivePost(data))
     dispatch(readPost(data.id))
+    onPostOpen()
   }
 
   const handleDismiss = () => {
@@ -74,7 +75,7 @@ export const Post = ({ post, isDismissing }) => {
 }
 
 Post.propTypes = {
-  post: PropTypes.object
+  post: PropTypes.object,
+  isDismissing: PropTypes.bool,
+  onPostOpen: PropTypes.func
 }
-
-

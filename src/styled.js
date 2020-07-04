@@ -21,6 +21,15 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0 0 0 12px;
+  
+  h1 {
+    color: ${props => props.theme.text};  
+  }
+  
+  > svg {
+    width: 20px;
+    fill: ${props => props.theme.text};
+  }
 `
 
 export const Layout = styled.section`
