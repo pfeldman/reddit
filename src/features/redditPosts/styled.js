@@ -10,6 +10,7 @@ export const Wrapper = styled.ul`
   overflow-y: auto;
   list-style: none;
   margin: 0;
+  z-index: 1;
   ${props => props.loading ? `
     justify-content: center;
     align-items: center;
@@ -26,6 +27,22 @@ export const Wrapper = styled.ul`
     position: absolute;
     width: 100%;
     height: 95vh;
+  }
+  
+  .swipeable-list-item__content-left {
+    position: absolute;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swipeable-list-item {
+    position: relative;
+  }
+  
+  .swipeable-list-item__content {
+    position: relative;
+    background-color: ${props => props.theme.background}
   }
 `
 

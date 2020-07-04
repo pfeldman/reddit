@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import {
   CommentCount,
-  Content,
+  Content, DeleteMobile,
   Details,
   ImageContainer,
   PostContent,
@@ -17,6 +17,9 @@ import { getActivePost, setActivePost } from '../activePost/slice'
 import { ReactComponent as CloseIcon } from '../../resources/icons/close.svg'
 import { dismissPost } from '../dismissedPosts/slice'
 import { getReadPosts, readPost } from '../readStatus/slice'
+import { SwipeableListItem } from '@sandstreamdev/react-swipeable-list';
+import { ReactComponent as TrashIcon } from '../../resources/icons/trash.svg'
+import { useIsMobile } from '../../hooks/responsive'
 
 export const Post = ({ post, isDismissing, onPostOpen }) => {
   const [dismissed, setDismissed] = useState(false)
@@ -48,29 +51,39 @@ export const Post = ({ post, isDismissing, onPostOpen }) => {
   }, [dismissed, data.id, dispatch, isDismissing])
 
   const isRead = readPosts.findIndex(post => post.payload === data.id) >= 0
+  const isMobile = useIsMobile()
 
   return (
-    <Wrapper onClick={handlePostSelect} selected={id === data.id} dismissed={dismissed || isDismissing}>
-      <Details>
-        <UserWrapper isRead={isRead}>
-          <UnreadStatus isRead={isRead} />
-          <h2>{data.author}</h2>
-        </UserWrapper>
-        <div>
-          <time>{moment(data.created_utc * 1000).fromNow()}</time>
-          <CloseIcon onClick={handleDismiss} />
-        </div>
-      </Details>
-      <Content>
-        <ImageContainer>
-          {data.thumbnail !== 'default' && <img src={data.thumbnail} alt='post' />}
-        </ImageContainer>
-        <PostContent>
-          <PostTitle>{data.title}</PostTitle>
-          <CommentCount>{data.num_comments} comments</CommentCount>
-        </PostContent>
-      </Content>
-    </Wrapper>
+    <SwipeableListItem
+      swipeLeft={{
+        content: (
+          <DeleteMobile><TrashIcon /></DeleteMobile>
+        ),
+        action: () => dispatch(dismissPost(data.id))
+      }}
+    >
+      <Wrapper onClick={handlePostSelect} selected={id === data.id} dismissed={dismissed || isDismissing}>
+        <Details>
+          <UserWrapper isRead={isRead}>
+            <UnreadStatus isRead={isRead} />
+            <h2>{data.author}</h2>
+          </UserWrapper>
+          <div>
+            <time>{moment(data.created_utc * 1000).fromNow()}</time>
+            {!isMobile && <CloseIcon onClick={handleDismiss} />}
+          </div>
+        </Details>
+        <Content>
+          <ImageContainer>
+            {data.thumbnail !== 'default' && <img src={data.thumbnail} alt='post' />}
+          </ImageContainer>
+          <PostContent>
+            <PostTitle>{data.title}</PostTitle>
+            <CommentCount>{data.num_comments} comments</CommentCount>
+          </PostContent>
+        </Content>
+      </Wrapper>
+    </SwipeableListItem>
   )
 }
 

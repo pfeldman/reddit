@@ -9,6 +9,7 @@ import { Loader } from '../../components/Loader'
 import { DismissAll, Wrapper } from './styled'
 import { Post } from '../post'
 import { getDismissedPosts } from '../dismissedPosts/slice'
+import { SwipeableList } from '@sandstreamdev/react-swipeable-list';
 
 export const RedditPosts = ({ onPostOpen }) => {
   const [isDismissingAll, setIsDismissingAll] = useState(false)
@@ -30,15 +31,19 @@ export const RedditPosts = ({ onPostOpen }) => {
     <Wrapper loading={fetchingRedditPosts}>
       {fetchingRedditPosts
         ? <Loader />
-        : postsAvailable.map(post => (
-          <Post
-            onPostOpen={onPostOpen}
-            isDismissing={isDismissingAll}
-            key={post.data.id}
-            post={post}
-          />
+        : (
+          <SwipeableList>
+            {postsAvailable.map(post => (
+              <Post
+                onPostOpen={onPostOpen}
+                isDismissing={isDismissingAll}
+                key={post.data.id}
+                post={post}
+              />
+            ))}
+          </SwipeableList>
         )
-        )}
+      }
       <DismissAll onClick={handleDismissAll}>Dismiss All</DismissAll>
     </Wrapper>
   )

@@ -94,3 +94,15 @@ export const UserWrapper = styled.div`
     `}
   }
 `
+
+export const DeleteMobile = styled.div`
+  height: 100%;
+  
+  svg {
+    height: 30%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 20px;
+  }
+`
