@@ -31,7 +31,7 @@ export const Wrapper = styled.ul`
   
   .swipeable-list-item__content-left {
     position: absolute;
-    background-color: red;
+    background-color: ${props => props.theme.delete};
     width: 100%;
     height: 100%;
   }

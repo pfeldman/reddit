@@ -3,7 +3,8 @@ export const themeDark = {
   background: '#3a3b3a',
   border: '#686968',
   text: '#fff',
-  unread: '#ffbc00'
+  unread: '#ffbc00',
+  delete: '#c10202'
 }
 
 export const themeLight = {
@@ -11,5 +12,6 @@ export const themeLight = {
   background: '#CCC',
   border: '#a5a5a5',
   text: '#000',
-  unread: '#ffbc00'
+  unread: '#ffbc00',
+  delete: '#c10202'
 }
