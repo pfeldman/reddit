@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfbdf36a-b3da-4117-9052-950c94429327" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/features/Post/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/Post/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/activePost/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/activePost/slice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/activePost/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/dismissedPosts/slice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/readStatus/slice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/icons/close.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Post/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Post/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/post/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/redditPosts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/redditPosts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/redditPosts/slice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/redditPosts/slice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/redditPosts/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/redditPosts/styled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/theme/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/theme/styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/theme/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/theme/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +40,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/resources/icons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/features/readStatus" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -46,6 +53,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/features/readStatus" />
       <recent name="$PROJECT_DIR$/src/resources/icons" />
     </key>
   </component>
@@ -59,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593810763429</updated>
-      <workItem from="1593810764882" duration="9142000" />
+      <workItem from="1593810764882" duration="16426000" />
     </task>
     <servers />
   </component>
@@ -75,13 +83,13 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="1780" y="100" width="1720" height="880" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1593812170873" />
-    <state x="2348" y="250" width="584" height="580" key="find.popup" timestamp="1593820446740">
+    <state x="2348" y="250" width="584" height="580" key="find.popup" timestamp="1593828033972">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2348" y="250" width="584" height="580" key="find.popup/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1593820446740" />
-    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1593818695365">
+    <state x="2348" y="250" width="584" height="580" key="find.popup/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1593828033972" />
+    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1593829204016">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1593818695365" />
+    <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050/1680.0.1920.1080@1680.0.1920.1080" timestamp="1593829204016" />
   </component>
 </project>

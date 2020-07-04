@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import { lighten } from 'polished'
+import { lighten, darken } from 'polished'
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -11,5 +11,19 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Wrapper = styled.div`
   display: flex;
-  height: 100vh;
+  height: 95vh;
+`
+
+export const Header = styled.header`
+  height: 5vh;
+  background-color: ${props => darken(0.2, props.theme.background)};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0 12px;
+`
+
+export const Layout = styled.section`
+  display: flex;
+  flex-direction: column;
 `

@@ -22,7 +22,7 @@ export const { request, success } = redditPosts.actions
 
 export const fetchRedditPosts = (count = 50) => async dispatch => {
   dispatch(request())
-  const raw = await fetch(`${BASE_URL}/top.json?limit=${count}`)
+  const raw = await fetch(`${BASE_URL}/top?limit=${count}`)
   const data = await raw.json()
   dispatch(success(data.data.children))
 }
