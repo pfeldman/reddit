@@ -104,5 +104,6 @@ export const DeleteMobile = styled.div`
     top: 50%;
     transform: translate(0, -50%);
     right: 20px;
+    fill: white;
   }
 `
