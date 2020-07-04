@@ -7,11 +7,14 @@ import {
 } from './slice'
 import { Loader } from '../../components/Loader'
 import { Wrapper } from './styled'
+import { Post } from '../Post'
 
 export function RedditPosts () {
   const fetchingRedditPosts = useSelector(getIsFetching)
   const redditPosts = useSelector(getRedditPosts)
   const dispatch = useDispatch()
+
+  const posts = redditPosts.payload || []
 
   useEffect(() => {
     dispatch(fetchRedditPosts())
@@ -19,9 +22,7 @@ export function RedditPosts () {
 
   return (
     <Wrapper loading={fetchingRedditPosts}>
-      {fetchingRedditPosts ? <Loader /> : (
-        <div>Hello</div>
-      )}
+      {fetchingRedditPosts ? <Loader /> : posts.map(post => <Post key={post.id} post={post} />)}
     </Wrapper>
   )
 }

@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     font-family: Helvetica, Arial, serif;
-    background-color: ${props => lighten(0.3, props.theme.background)}
+    background-color: ${props => lighten(0.3, props.theme.background)};
   }
 `
 
