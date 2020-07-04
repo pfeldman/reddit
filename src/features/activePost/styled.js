@@ -14,6 +14,7 @@ export const Post = styled.div`
   padding: 20px 20px 0 20px;
   overflow-y: auto;
   flex-basis: 75%;
+  color: ${props => props.theme.text};
   
   img {
     max-width: 100%;
